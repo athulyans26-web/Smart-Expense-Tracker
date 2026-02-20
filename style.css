@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f4f7fc;
+    transition: 0.3s;
+}
+
+.container {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 230px;
+    background: linear-gradient(180deg, #667eea, #764ba2);
+    color: white;
+    min-height: 100vh;
+    padding: 30px 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 10px;
+}
+
+/* Main */
+.main {
+    flex: 1;
+    padding: 30px;
+}
+
+/* Topbar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.topbar button {
+    padding: 8px 15px;
+    border: none;
+    background: #667eea;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Budget */
+.budget-section {
+    margin-bottom: 20px;
+}
+
+.budget-section input {
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.budget-section button {
+    padding: 8px 15px;
+    border: none;
+    background: #667eea;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.warning {
+    color: red;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.card {
+    background: white;
+    flex: 1;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.card p {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* Progress Bar */
+.progress {
+    background: #ddd;
+    height: 8px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    height: 8px;
+    width: 0%;
+    background: #4caf50;
+    border-radius: 10px;
+}
+
+/* Add Expense */
+.add-expense {
+    margin-bottom: 25px;
+}
+
+.add-expense input,
+.add-expense select {
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.add-expense button {
+    padding: 8px 15px;
+    border: none;
+    background: #667eea;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Expense List */
+.expense-list ul {
+    list-style: none;
+}
+
+.expense-list li {
+    background: white;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expense-list button {
+    background: red;
+    border: none;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Chart */
+.chart-box {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+/* Dark Mode */
+.dark {
+    background: #1e1e2f;
+    color: white;
+}
+
+.dark .card,
+.dark .expense-list li,
+.dark .chart-box {
+    background: #2c2c3e;
+}
+
+.dark .sidebar {
+    background: #111;
+}

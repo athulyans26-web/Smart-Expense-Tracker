@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <aside class="sidebar">
+        <h2>💰 ExpensePro</h2>
+        <p>Track Smart. Spend Wise.</p>
+    </aside>
+
+    <main class="main">
+
+        <!-- Top Bar -->
+        <div class="topbar">
+            <h1>Dashboard</h1>
+            <button onclick="toggleMode()">🌙 Toggle Mode</button>
+        </div>
+
+        <div class="income-section">
+            <input type="number" id="incomeInput" placeholder="Enter Monthly Income">
+            <button onclick="setIncome()">Set Income</button>
+        </div>
+
+        <!-- Budget Section -->
+        <div class="budget-section">
+            <input type="number" id="budgetInput" placeholder="Enter Monthly Budget">
+            <button onclick="setBudget()">Set Budget</button>
+            <p id="warning" class="warning"></p>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="cards">
+            <div class="card">
+                <h3>Total Spent</h3>
+                <p id="totalExpense">₹0</p>
+            </div>
+
+            <div class="card">
+                <h3>Budget</h3>
+                <p id="budgetDisplay">₹0</p>
+                <div class="progress">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Remaining</h3>
+                <p id="remainingAmount">₹0</p>
+            </div>
+
+            <div class="card">
+                <h3>Balance</h3>
+                <p id="balanceAmount">₹0</p>
+            </div>
+
+        </div>
+
+        <!-- Add Expense -->
+        <div class="add-expense">
+            <input type="text" id="desc" placeholder="Description">
+            <select id="category">
+                <option>Food</option>
+                <option>Travel</option>
+                <option>Shopping</option>
+                <option>Bills</option>
+                <option>Other</option>
+            </select>
+            <input type="date" id="date">
+            <input type="number" id="amount" placeholder="Amount">
+            <button onclick="addExpense()">Add Expense</button>
+        </div>
+
+        <!-- Expense List -->
+        <div class="expense-list">
+
+        <!-- ADD THIS SECTION -->
+        <div class="tools">
+        <input type="text" id="search" placeholder="Search..." onkeyup="updateUI()">
+
+        <select id="filterCategory" onchange="updateUI()">
+            <option>All</option>
+            <option>Food</option>
+            <option>Travel</option>
+            <option>Shopping</option>
+            <option>Bills</option>
+            <option>Other</option>
+        </select>
+
+        <button onclick="resetMonth()">Reset Month</button>
+        <button onclick="exportCSV()">Export CSV</button>
+
+        <div class="extra-buttons">
+            <button onclick="clearAll()">Clear All Data</button>
+            <button onclick="downloadPDF()">Download PDF</button>
+        </div>
+
+        <h3>Recent Expenses</h3>
+        <ul id="expenseList"></ul>
+    </div>
+
+        <!-- Chart -->
+        <div class="chart-box">
+            <canvas id="expenseChart"></canvas>
+        </div>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
